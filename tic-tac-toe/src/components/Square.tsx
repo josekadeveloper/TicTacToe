@@ -8,7 +8,7 @@ interface SquareProps {
 
 const Square: React.FC<SquareProps> = ({ index, handleClick, board }) => {
   return (
-    <div className="square" onClick={() => handleClick(index)}>
+    <div className='cell' onClick={() => handleClick(index)}>
       {board[index]}
     </div>
   );
