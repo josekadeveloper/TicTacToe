@@ -1,35 +1,55 @@
 import React, { useState } from 'react';
-import { calculateWinner } from '../utils/functions';
-import Square from './Square';
+import { TURNS } from '../utils/constans';
+import { checkDraw, getWinner } from '../utils/functions';
+import Result from './Result';
+import confetti from 'canvas-confetti';
+import Board from './Board';
 
 const TicTacToe: React.FC = () => {
   // Define the game state
-  const [board, setBoard] = useState<string[]>(Array(9).fill(''));
-  const [xIsNext, setXIsNext] = useState<boolean>(true);
-  const winner = calculateWinner(board);
+  const [board, setBoard] = useState<string[]>(Array(9).fill(null));
+  const [turn, setTurn] = useState(TURNS.X);
+  const [winner, setWinner] = useState<string | boolean | null>(null);
+
+  // Function to reset the game
+  const resetGame = () => {
+    setBoard(Array(9).fill(null));
+    setTurn(TURNS.X);
+    setWinner(null);
+  }
 
   // Handle click event on a square
   const handleClick = (index: number) => {
-    if (winner || board[index]) {
-      return;
-    }
+    if (board[index] || winner) return;
 
     const newBoard = [...board];
-    newBoard[index] = xIsNext ? 'X' : 'O';
-
+    newBoard[index] = turn;
     setBoard(newBoard);
-    setXIsNext(!xIsNext);
+
+    const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
+    setTurn(newTurn);
+
+    const newWinner = getWinner(newBoard);
+    const draw = checkDraw(newBoard);
+
+    if (newWinner) {
+      confetti();
+      setWinner(newWinner);
+    } else if (draw) {
+      setWinner(false);
+    }
   };
 
-  const status = winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`;
-
   return (
-    <div className="tic-tac-toe">
-      <div className="status">{status}</div>
-      {board.map((value, index) => (
-        <Square key={index} index={index} handleClick={handleClick} board={board} />
-      ))}
-    </div>
+    <main className='tic-tac-toe'>
+      <button className='reset-game' onClick={resetGame}>Reset Game</button>
+
+      <Board handleClick={handleClick} board={board} />
+
+      <section className='turn'>{`Next player: ${turn}`}</section>
+
+      <Result winner={winner} resetGame={resetGame} />
+    </main>
   );
 };
 
