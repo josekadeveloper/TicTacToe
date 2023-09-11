@@ -1,4 +1,5 @@
 import React from 'react';
+import './square.scss'
 
 interface SquareProps {
   index: number;

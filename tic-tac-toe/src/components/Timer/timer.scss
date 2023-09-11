@@ -1,0 +1,13 @@
+.timer {
+    color: #666;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px) {  
+    .timer {
+      font-size: 20px;
+    }
+}

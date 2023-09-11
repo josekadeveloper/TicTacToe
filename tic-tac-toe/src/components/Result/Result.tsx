@@ -1,4 +1,5 @@
 import React from 'react';
+import './result.scss';
 
 interface ResultProps {
     winner: string | boolean | null;
