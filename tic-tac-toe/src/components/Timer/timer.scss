@@ -1,5 +1,7 @@
+@import '../../utils/colors';
+
 .timer {
-    color: #666;
+    color: $superGrey;
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;

@@ -1,3 +1,5 @@
+@import '../../utils/colors';
+
 .winner {
     position: absolute;
     width: 100vw;
@@ -6,14 +8,14 @@
     left: 0;
     display: grid;
     place-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $dark;
   }
   
   .winner .text {
     height: 300px;
     width: 320px;
-    color: #fff;
-    border: 2px solid #fff;
+    color: $white;
+    border: 2px solid $white;
     border-radius: 10px;
     padding-top: 50px;
   
@@ -25,7 +27,7 @@
   .winner .win {
     margin: 0 auto;
     width: fit-content;
-    border: 2px solid #eee;
+    border: 2px solid $white;
     border-radius: 10px;
     margin-bottom: 10px;
   }
@@ -33,18 +35,18 @@
   .winner .new-game {
     margin: 0 auto;
     width: fit-content;
-    border: 2px solid #eee;
+    border: 2px solid $white;
     border-radius: 10px;
   
     button {
       width: 100px;
-      color: #fff;
-      background-color: #444;
+      color: $white;
+      background-color: $mediumGrey;
       border-radius: 5px;
       cursor: pointer;
   
       &:hover {
-        background-color: #555;
+        background-color: $highGrey;
       }
     }
 }

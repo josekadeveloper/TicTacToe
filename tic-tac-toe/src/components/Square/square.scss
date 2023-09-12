@@ -1,19 +1,21 @@
+@import '../../utils/colors';
+
 /* Style individual cells (grid items) */
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
-    color: #fff;
-    background-color: #444;
+    color: $white;
+    background-color: $mediumGrey;
     width: 100px;
     height: 100px;
-    border: 2px solid #333;
+    border: 2px solid $softGrey;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
   
     &:hover {
-      background-color: #555;
+      background-color: $highGrey;
     }
 }
 
