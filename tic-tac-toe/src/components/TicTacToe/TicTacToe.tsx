@@ -16,8 +16,8 @@ const TicTacToe: React.FC = () => {
   const [winner, setWinner] = useState<string | boolean | null>(null);
   const [timer, setTimer] = useState(30);
   const [isPulsating, setIsPulsating] = useState(false);
-  const [shouldContinueTimer, setShouldContinueTimer] = useState(true);
-  const [disabledBoard, setDisabledBoard] = useState(false);
+  const [shouldContinueTimer, setShouldContinueTimer] = useState(false);
+  const [disabledBoard, setDisabledBoard] = useState(true);
 
   useEffect(() => {
     // Start the countdown timer

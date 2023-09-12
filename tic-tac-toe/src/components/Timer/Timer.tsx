@@ -9,7 +9,7 @@ interface TimerProps {
 const Timer: React.FC<TimerProps> = ({ isPulsating, timer }) => {
     return (
         <section className={`timer ${isPulsating ? 'pulse' : ''}`}>
-            {timer} seconds
+            Time left for next turn: {timer} seconds
         </section>
     );
 };
