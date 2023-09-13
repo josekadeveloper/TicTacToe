@@ -4,10 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px 10px;
   
     .start-game {
-      height: 3vh;
+      height: auto;
       color: $white;
       background-color: $mediumGrey;
       border-radius: 5px;
@@ -20,7 +20,7 @@
     }
     
     .stop-game {
-      height: 3vh;
+      height: auto;
       color: $white;
       background-color: $mediumGrey;
       border-radius: 5px;
@@ -33,7 +33,7 @@
     }
     
     .reset-game {
-      height: 3vh;
+      height: auto;
       color: $white;
       background-color: $mediumGrey;
       border-radius: 5px;
