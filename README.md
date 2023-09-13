@@ -1,5 +1,5 @@
 # TicTacToe
-Development Tic Tac Toe (3 en raya in spanish) game developed in React, TypeScript and Sass
+Tic Tac Toe (3 en raya in spanish) game
 
 ### Features
 
